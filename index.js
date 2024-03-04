@@ -29,5 +29,16 @@ console.log(c);
 function addString(d, e) {
     return d + e;
 }
-//let f = addString(3 , 'luffy');
 console.log(addString(3, 'luffy'));
+function example(name, greeting) {
+    return `${name} ${greeting}`;
+}
+console.log(example('myat', 'hello'));
+let tuple = [2, 'cupid', 6, true];
+console.log(tuple);
+const newPost = { title: 'hello world', post: 'heehee', quantity: 10 };
+console.log(newPost);
+function createPost(postp) {
+    console.log(`Created by ${postp.post} and the title is ${postp.title}`);
+}
+createPost(newPost);

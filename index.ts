@@ -33,3 +33,27 @@ function addString(d:number, e:string){
     return d + e;
 }
 console.log(addString(3, 'luffy'));
+
+function example(name: String, greeting: String){
+    return `${name} ${greeting}`;
+}
+console.log(example('myat','hello'))
+
+//tuple
+let tuple:[number , string, number, boolean] = [2, 'cupid' , 6, true];
+
+console.log(tuple);
+
+//interface
+interface Post {
+    title: string,
+    post: string,
+    quantity: number
+}
+const newPost:Post = {title:'hello world', post: 'heehee', quantity:10}
+console.log(newPost);
+
+function createPost(postp: Post): void {
+    console.log(`Created by ${postp.post} and the title is ${postp.title}`);
+}
+createPost(newPost)
