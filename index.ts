@@ -44,16 +44,68 @@ let tuple:[number , string, number, boolean] = [2, 'cupid' , 6, true];
 
 console.log(tuple);
 
-//interface
-interface Post {
-    title: string,
-    post: string,
-    quantity: number
+// interfaces
+// type aliases
+interface Author {
+	name: string
+	avatar: string
 }
-const newPost:Post = {title:'hello world', post: 'heehee', quantity:10}
-console.log(newPost);
+// example 1 - tuple
 
-function createPost(postp: Post): void {
-    console.log(`Created by ${postp.post} and the title is ${postp.title}`);
+const authorOne: Author = { name: 'mario', avatar: '/img/mario.png' }
+type Rgb = [number, number, number]
+
+interface Post {
+	title: string
+	body: string
+	tags: string[]
+	created_at: Date
+	author: Author
 }
+function getRandomColor(): Rgb {
+	const r = Math.floor(Math.random() * 255)
+	const g = Math.floor(Math.random() * 255)
+	const b = Math.floor(Math.random() * 255)
+
+const newPost = {
+	title: 'my first post',
+	body: 'something interesting',
+	tags: ['gaming', 'tech'],
+	created_at: new Date(),
+	author: authorOne,
+	return [r, g, b]
+}
+
+//----------------------------
+// as function argument types
+//----------------------------
+const colorOne = getRandomColor()
+const colorTwo = getRandomColor()
+console.log(colorOne, colorTwo)
+
+function createPost(post: Post): void {
+	console.log(`created post ${post.title} by ${post.author.name}`)
+}
+// example 2 - object literal
+
+// createPost({ title: 'a new post title' })
 createPost(newPost)
+type User = {
+	name: string
+	score: number
+}
+
+//-------------
+// with arrays
+//-------------
+const userOne: User = { name: 'mario', score: 75 }
+
+let posts: Post[] = []
+function formatUser(user: User): void {
+	console.log(`${user.name} has a score of ${user.score}.`)
+}
+
+// posts.push({ title: 'some title' })
+posts.push(newPost)
+formatUser(userOne)
+formatUser({ name: 'yoshi', score: 100 }) }

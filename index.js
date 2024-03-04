@@ -34,11 +34,45 @@ function example(name, greeting) {
     return `${name} ${greeting}`;
 }
 console.log(example('myat', 'hello'));
+//tuple
 let tuple = [2, 'cupid', 6, true];
 console.log(tuple);
-const newPost = { title: 'hello world', post: 'heehee', quantity: 10 };
-console.log(newPost);
-function createPost(postp) {
-    console.log(`Created by ${postp.post} and the title is ${postp.title}`);
+// example 1 - tuple
+const authorOne = { name: 'mario', avatar: '/img/mario.png' };
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const newPost = {
+        title: 'my first post',
+        body: 'something interesting',
+        tags: ['gaming', 'tech'],
+        created_at: new Date(),
+        author: authorOne,
+        return: [r, g, b]
+    };
+    //----------------------------
+    // as function argument types
+    //----------------------------
+    const colorOne = getRandomColor();
+    const colorTwo = getRandomColor();
+    console.log(colorOne, colorTwo);
+    function createPost(post) {
+        console.log(`created post ${post.title} by ${post.author.name}`);
+    }
+    // example 2 - object literal
+    // createPost({ title: 'a new post title' })
+    createPost(newPost);
+    //-------------
+    // with arrays
+    //-------------
+    const userOne = { name: 'mario', score: 75 };
+    let posts = [];
+    function formatUser(user) {
+        console.log(`${user.name} has a score of ${user.score}.`);
+    }
+    // posts.push({ title: 'some title' })
+    posts.push(newPost);
+    formatUser(userOne);
+    formatUser({ name: 'yoshi', score: 100 });
 }
-createPost(newPost);
