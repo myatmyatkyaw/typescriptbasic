@@ -8,3 +8,16 @@ function testPractice() : rgb {
 }
 const haha = testPractice()
 console.log(haha)
+
+type User = {
+    name : string
+    age : number
+}
+const userone : User = {
+    name : 'myat',
+    age : 24
+}
+function createUser(user: User): void {
+    console.log(`Name is ${user.name} and age is ${user.age}`)
+}
+createUser(userone)

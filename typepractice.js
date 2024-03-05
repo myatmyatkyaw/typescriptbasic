@@ -7,3 +7,11 @@ function testPractice() {
 }
 const haha = testPractice();
 console.log(haha);
+const userone = {
+    name: 'myat',
+    age: 24
+};
+function createUser(user) {
+    console.log(`Name is ${user.name} and age is ${user.age}`);
+}
+createUser(userone);
